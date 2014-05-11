@@ -16,13 +16,13 @@ void loop()
   Serial.println(distance);  
  
   //if sensor on range
-  if(distance>800)
+  if(distance>=1000)
   {
-    Serial.println("Sensor On");
+   // Serial.println("Sensor On");
    // turnLed();
    counter1=0;
    counter++;
-   Serial.println(counter);
+   //Serial.println(counter);
    
    if(counter==1)
    {
@@ -31,9 +31,9 @@ void loop()
    
   }
   //if sensor off range
-  else if(distance<700)
+  else if(distance<1000)
   {
-    Serial.println("Sensor Off");
+    //Serial.println("Sensor Off");
     
     counter=0;
   
@@ -46,12 +46,12 @@ void turnOnLed()
 {
   if(digitalRead(led) == HIGH)
   {
-     Serial.println("LedOn");
+    //Serial.println("LedOn");
      digitalWrite(led, LOW); 
   }
   else if(digitalRead(led) == LOW)
   {
-    Serial.println("LedOff");
+   // Serial.println("LedOff");
      digitalWrite(led, HIGH); 
   }
 //  delay(1000);               // wait for a second
